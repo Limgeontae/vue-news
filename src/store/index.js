@@ -1,10 +1,25 @@
 import Vuex from 'vuex'
 import Vue from 'vue'
 
+import mutations from '@/store/mutations'
+import actions from '@/store/actions'
+
 Vue.use(Vuex)
 
 export  const store = new Vuex.Store({
   state :{
-    news : []
-  }
+    news : [],
+    ask : [],
+    jobs: [],
+    user: {},
+    item: {},
+
+  },
+  getters :{
+    fetchedAsk(state) {
+      return state.ask
+    }
+  },
+  mutations,
+  actions,
 })
