@@ -29,10 +29,10 @@ export default {
         context.commit('SET_USER', response.data);
       })
   },
-  FETCH__ITEM(context, id){
+  FETCH__ITEM ({commit},id){
     fetchItemInfo(id)
       .then(response => {
-        context.commit('SET_ITEM', response.data);
+        commit('SET_ITEM', response.data);
       })
   }
 }
