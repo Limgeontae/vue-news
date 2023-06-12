@@ -1,13 +1,11 @@
 import { fetchAskList, fetchItemInfo, fetchJobsList, fetchNewsList, fetchUserInfo } from '@/api'
 
 export default {
-  FETCH__NEWS(context) {
-    fetchNewsList()
-      .then(response => {
-        console.log(response.data);
-        context.commit('SET_NEWS' , response.data);
-      }).catch(error => console.log(error))
-
+  async FETCH__NEWS(context) {
+    let response =  await fetchNewsList()
+    console.log(response.data);
+    context.commit('SET_NEWS', response.data)
+    return response
   },
   FETCH__ASK(context){
     fetchAskList()
