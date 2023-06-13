@@ -40,14 +40,15 @@ export  default {
   computed: {
     // eslint-disable-next-line vue/return-in-computed-property
     listItems() {
-      if(this.$route.path === '/news'){
-        return this.$store.state.news;
-      }else if(this.$route.path ==='/ask'){
-        return this.$store.state.ask;
-      }
-      else if(this.$route.path === '/jobs'){
-        return this.$store.state.jobs;
-      }
+      return this.$store.state.list
+      // if(this.$route.path === '/news'){
+      //   return this.$store.state.news;
+      // }else if(this.$route.path ==='/ask'){
+      //   return this.$store.state.ask;
+      // }
+      // else if(this.$route.path === '/jobs'){
+      //   return this.$store.state.jobs;
+      // }
     }
   }
 }
