@@ -4,7 +4,7 @@
     <transition name="page">
     <router-view></router-view>
     </transition>
-    <spin-ner :loading="loadingStatus"></spin-ner>
+   <Spinner :loading="loadingStatus"></Spinner>
 
   </div>
 </template>
@@ -12,11 +12,11 @@
 <script>
 
 import ToolBar from '@/components/ToolBar.vue'
-import SpinNer from '@/components/SpinNer.vue'
+import Spinner from '@/components/SpinNer.vue'
 import bus from '@/utils/bus'
 export default {
   components:{
-    SpinNer,
+    Spinner,
     ToolBar,
   },
   data(){

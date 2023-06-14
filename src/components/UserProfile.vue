@@ -1,6 +1,5 @@
 <template>
   <div>
-
     <section>
       <div class="user-container">
         <div>
@@ -14,7 +13,6 @@
             <slot name="time"></slot>
             <slot name="karma"></slot>
           </div>
-
         </div>
       </div>
     </section>

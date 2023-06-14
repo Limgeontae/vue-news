@@ -20,28 +20,19 @@ export default {
   //       context.commit('SET_JOBS', response.data);
   //     })
   // },
-  FETCH__USER(context, name){
-    fetchUserInfo(name)
-      .then(response => {
-        console.log(response.data)
-        context.commit('SET_USER', response.data);
-      })
+  async FETCH__USER({ commit }, name){
+    const response = await fetchUserInfo(name)
+    commit('SET_USER', response.data)
+    return response
   },
-  FETCH__ITEM ({commit},id){
-    fetchItemInfo(id)
-      .then(response => {
-        commit('SET_ITEM', response.data);
-      })
+  async FETCH__ITEM ({commit},id){
+    const response = await fetchItemInfo(id)
+    commit('SET_ITEM', response.data)
+    return response
   },
-  FETCH_LIST ({commit}, pageName) {
-    return fetchList(pageName)
-      .then((response)=> {
-          commit('SET_LIST', response.data)
-          return  response
-      }
-      )
-
-      .catch(error => console.log(error) )
-
+  async FETCH_LIST ({commit}, pageName) {
+    const response = await fetchList(pageName)
+    commit('SET_LIST', response.data)
+    return response
   },
 }
